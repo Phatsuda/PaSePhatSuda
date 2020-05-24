@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,7 +69,7 @@ namespace ภาษี
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             mixpasedown = 0;
-            //สมรส//
+            //สมรส,โสด//
             if (Sode.Checked)
             {
                 mixpasedown += 60000;
@@ -145,8 +145,7 @@ namespace ภาษี
             mixpasedown += b61;
             mixpasedown += b60;
 
-            //ค่าลดหย่อนบุตร
-            
+            //ค่าลดหย่อนบุตร           
             int bootdown = Convert.ToInt32(bootdown01.Value);
             mixpasedown += bootdown;
             
@@ -195,7 +194,7 @@ namespace ภาษี
             born60.Value = 0;
             born61up.Value = 0;
         }
-
+        //จบกลุ่ม1//
 
         //กลุ่มที่ 2
         private void group2(object sender,EventArgs e)
@@ -240,7 +239,7 @@ namespace ภาษี
             numericUpDown10.Enabled = false;
             numericUpDown10.Value = 0;
         }
-
+        //จบกลุ่ม2//
 
         //กลุ่มที่ 3
         private void numericUpDown11_ValueChanged(object sender, EventArgs e)
@@ -259,7 +258,7 @@ namespace ภาษี
             }
             textBox13.Text = showhome58.ToString();
             textBox19.Text = home58.ToString();
-            int home62 = (Convert.ToInt32(numericUpDown13.Value)) * 4 / 100;
+            int home62 = (Convert.ToInt32(numericUpDown13.Value)) * 4 / 100; //บริจาคได้สูงสุด 5 ล้าน แต่จะได้ค่าลดหย่อนได้แค่ 2 แสน มันก็คือ 4%
             if (numericUpDown13.Text == "")
             {
                 numericUpDown13.Text = "0";
@@ -281,9 +280,9 @@ namespace ภาษี
             groupBox17.Enabled = true;
             numericUpDown13.Value = 0;
         }
+        //จบกลุ่ม3//
 
-
-        //กลุ่มที่ 4
+        //กลุ่มที่ 4//
         private void group4_ValueChanged(object sender,EventArgs e)
         {
             mixpasedown4 = 0;
@@ -291,7 +290,7 @@ namespace ภาษี
             int donate2time = 0;
             int donatenormal = 0;
             int donatepolitics = 0;
-            int donate2time10per = group4total * 10 / 100;
+            int donate2time10per = group4total * 10 / 100; //ได้ค่าลดหย่อน 2 เท่า แต่ไม่เกิน 10% ของรายได้สุทธิที่หักค่าใช้จ่ายทั้งหมดแล้วยกเว้นกลุ่มนี้
             int donate2time10pershow = (group4total * 10 / 100) / 2;
             if (numericUpDown23.Text == "")
             {
@@ -307,7 +306,7 @@ namespace ภาษี
             {
                 numericUpDown24.Text = "0";
             }
-            donatenormal = Convert.ToInt32(numericUpDown24.Value);
+            donatenormal = Convert.ToInt32(numericUpDown24.Value); //อิงจากด้านบน
             group4totalver2 = z1 - costs - grouppu - donate2time;
             int donatenormal10per = group4totalver2 * 10 / 100;
             if (donatenormal > donatenormal10per)
@@ -328,14 +327,14 @@ namespace ภาษี
             ///บริจาคเงินทั่วไป + บริจาครัฐบาล
             mixpasedown4 = donate2time + donatenormal + donatepolitics;
         }
-
+        //จบกลุ่ม4//
 
         //กลุ่มที่ 5
         private void group5(object sender, EventArgs e)
         {
             mixpasedown5 = 0;
-            ///ช๊อปช่วยชาติ
-            int nation = Convert.ToInt32(numericUpDown15.Value);
+
+            int nation = Convert.ToInt32(numericUpDown15.Value); //ช่วยชาติ
             if (nation > 15000)
             {
                 nation = 15000;
@@ -344,8 +343,8 @@ namespace ภาษี
             {
                 numericUpDown15.Text = "0";
             }
-            ///การกีฬา
-            int sport = Convert.ToInt32(numericUpDown16.Value);
+            
+            int sport = Convert.ToInt32(numericUpDown16.Value); //กีฬา
             if (sport > 15000)
             {
                 sport = 15000;
@@ -354,8 +353,8 @@ namespace ภาษี
             {
                 numericUpDown16.Text = "0";
             }
-            ///หนังสือ
-            int book = Convert.ToInt32(numericUpDown17.Value);
+            
+            int book = Convert.ToInt32(numericUpDown17.Value); //หนังสือ
             if (book > 15000)
             {
                 book = 15000;
